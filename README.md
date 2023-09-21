@@ -8,10 +8,16 @@ Step2. Select Project -Maven, Lagnuage - Java,  Spring Boot Version -3.1.3, add 
 Step3. Extract this zip file and open in Eclipes or InteliJ ide etc.
 
 
-Step4. crate a sub package like controller, service, repo, model package.
+Step4. Craete a sub package like controller, service, repo, model package.
 
 
-step5 . 
+Step5 . and create Student Class with id, name and score and add getter setter, constructor and toString method.
+
+
+Step6. craete a StudentController, StudentService, StudentRepository classes and intrfaces.
+
+
+
 
 
  
