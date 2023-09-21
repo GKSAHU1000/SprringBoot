@@ -17,6 +17,37 @@ Step5 . and create Student Class with id, name and score and add getter setter, 
 Step6. craete a StudentController, StudentService, StudentRepository classes and intrfaces.
 
 
+step7. copy the all class and run the project.
+
+step8. open a postman and persorm the action like below
+
+* Add new Student: http://localhost:8081/api/students/add -POST
+
+    request body : {
+        "id": 2,
+        "name" : "Test2",
+        "score" : 4.20
+    }
+
+
+* Get All Students : http://localhost:8081/api/students/getall - GET
+
+
+* Get Student By Id : http://localhost:8081/api/students/getbyid/9 - GET
+
+
+* Update the Score : http://localhost:8081/api/students/update/1 - Patch
+reqBody score = 20.00
+
+
+* Delete The Student  : http://localhost:8081/api/students/delete/2 - Delete
+
+* Multiple Entry : http://localhost:8081/api/students/addauto - GET
+
+
+
+
+
 
 
 
