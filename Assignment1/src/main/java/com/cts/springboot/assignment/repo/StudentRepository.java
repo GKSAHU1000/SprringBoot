@@ -6,31 +6,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public
-interface StudentRepository {
+public class StudentRepository {
     //All Student list initialized
-    List<Student> studentList = new ArrayList<>();
+    public List<Student> studentList = new ArrayList<>();
 
 
     //find All Students
-    static List<Student> findAll() {
+    public List<Student> findAll() {
         return studentList;
     }
 
     //All Student by id
-    static Student findById(int id) {
+    public Student findById(int id) {
         return studentList.stream().filter(student -> student.getId() == id).findFirst().get();
     }
 
     //add new Student
-    static Student add(Student student) {
+    public Student add(Student student) {
         System.out.println("Students : " + student);
         studentList.add(student);
         return findById(student.getId());
     }
 
     //Update student score by Student id
-    static Student updateScoreById(int id, double score) {
+    public Student updateScoreById(int id, double score) {
         System.out.println("Id : "+id+" | score = "+score);
         studentList.forEach(student -> {
             if (student.getId() == id) {
@@ -41,13 +40,13 @@ interface StudentRepository {
     }
 
     //delete student by id
-    static void deleteById(int id) {
+    public void deleteById(int id) {
         Student student = findById(id);
         studentList.remove(student);
     }
 
     //Add Multiple Student for demo
-    static void AutoADD() {
+    public void AutoADD() {
         studentList.add(new Student(2, "Student-2", 50.52));
         studentList.add(new Student(3, "Student-3", 60.82));
         studentList.add(new Student(4, "Student-4", 70.44));

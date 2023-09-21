@@ -8,29 +8,28 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/api/students")
 public class StudentController {
 
     @Autowired
-    StudentService studentService;
+    StudentService service;
 
     @PostMapping("/add")
     public void addStudent(@RequestBody Student student) {
-        new ResponseEntity<>(studentService.addStudent(student), HttpStatus.CREATED);
+        new ResponseEntity<>(service.addStudent(student), HttpStatus.CREATED);
     }
 
     @GetMapping("/addauto")
     public ResponseEntity<HttpStatus> addauto() {
-        studentService.addMultipleStudents();
+        service.addMultipleStudents();
       return  new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @GetMapping("/getall")
     public ResponseEntity<List<Student>> getAllStudents() {
-        List<Student> students = studentService.getStudents();
+        List<Student> students = service.getStudents();
         if (students.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
@@ -40,7 +39,7 @@ public class StudentController {
 
     @GetMapping("getbyid/{id}")
     public ResponseEntity<Student> getStudent(@PathVariable("id") int sid) {
-        Student student = studentService.getStudentById(sid);
+        Student student = service.getStudentById(sid);
         if (student != null) {
             return new ResponseEntity<>(student, HttpStatus.OK);
         } else {
@@ -50,12 +49,12 @@ public class StudentController {
 
     @PatchMapping("/update/{id}")
     public ResponseEntity<Student> updateStudentScore(@PathVariable("id") int sid, @RequestParam("score") double score) {
-        return new ResponseEntity<>(studentService.updateStudentScore(sid, score),HttpStatus.OK);
+        return new ResponseEntity<>(service.updateStudentScore(sid, score),HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<HttpStatus> deleteStudent(@PathVariable("id") int sid) {
-        studentService.deleteStudent(sid);
+        service.deleteStudent(sid);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 

@@ -13,46 +13,46 @@ public class Assignment1Application {
 		ConfigurableApplicationContext context = SpringApplication.run(Assignment1Application.class, args);
 
 		//get Student Service class from bean
-		StudentService studentService = context.getBean(StudentService.class);
+		StudentService service = context.getBean(StudentService.class);
 
 		System.out.println("Add New Student");
 		//Add new students
-		studentService.addStudent(new Student(1, "Student-1",20.00));
+		service.addStudent(new Student(1, "Student-1",20.00));
 
 		System.out.println();
 		System.out.println();
 
 		System.out.println("Add multiple Students automatically");
 		//Add multiple Students automatically
-		studentService.addMultipleStudents();
+		service.addMultipleStudents();
 
 		System.out.println();
 		System.out.println();
 
 		System.out.println("Fetch and display the students.");
 		// Fetch and display the students.
-		studentService.getStudents().forEach(System.out::println);
+		service.getStudents().forEach(System.out::println);
 
 		System.out.println();
 		System.out.println();
 
 		System.out.println("Update scores and observe the scoring system logs.  with Above Average");
 		///Update scores and observe the scoring system logs.
-		studentService.updateStudentScore(1, 90.00);
+		service.updateStudentScore(1, 90.00);
 
 		System.out.println();
 		System.out.println();
 
 		System.out.println("Update scores and observe the scoring system logs  with Average");
 		///Update scores and observe the scoring system logs.
-		studentService.updateStudentScore(2, 60.00);
+		service.updateStudentScore(2, 60.00);
 
 		System.out.println();
 		System.out.println();
 
 		System.out.println("Update scores and observe the scoring system logs with Below Average");
 		///Update scores and observe the scoring system logs.
-		studentService.updateStudentScore(3, 30.00);
+		service.updateStudentScore(3, 30.00);
 
 
 		System.out.println();
@@ -60,7 +60,7 @@ public class Assignment1Application {
 
 		System.out.println("Remove a student");
 		//• Remove a student
-		studentService.deleteStudent(5);
+		service.deleteStudent(5);
 
 	}
 
