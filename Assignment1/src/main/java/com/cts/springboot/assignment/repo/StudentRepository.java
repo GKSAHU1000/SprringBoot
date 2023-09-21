@@ -2,9 +2,7 @@ package com.cts.springboot.assignment.repo;
 
 import com.cts.springboot.assignment.model.Student;
 import org.springframework.stereotype.Repository;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Repository
@@ -37,16 +35,12 @@ interface StudentRepository {
     }
 
     static void deleteById(int id) {
-        studentList.forEach(student -> {
-            if (student.getId() == id) {
-                studentList.remove(student);
-            }
-        });
+        Student student = findById(id);
+        studentList.remove(student);
     }
 
 
     static void AutoADD() {
-        studentList.add(new Student(1, "Student-1", 10.05));
         studentList.add(new Student(2, "Student-2", 50.52));
         studentList.add(new Student(3, "Student-3", 60.82));
         studentList.add(new Student(4, "Student-4", 70.44));

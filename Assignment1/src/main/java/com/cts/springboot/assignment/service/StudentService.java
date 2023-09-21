@@ -2,7 +2,6 @@ package com.cts.springboot.assignment.service;
 
 import com.cts.springboot.assignment.model.Student;
 import com.cts.springboot.assignment.repo.StudentRepository;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Service;
@@ -20,7 +19,7 @@ public class StudentService  implements InitializingBean, DisposableBean {
 
     }
 
-    public void addAutoStudents() {
+    public void addMultipleStudents() {
         logger.info("Multiple student added automatically");
          StudentRepository.AutoADD();
     }
