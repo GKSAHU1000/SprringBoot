@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-public class Order {
+public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -14,11 +14,10 @@ public class Order {
     private List<Product> product;
     private LocalDateTime orderDate;
 
-    public Order() {
+    public Orders() {
     }
 
-    public Order(Long id, List<Product> products, LocalDateTime orderDate) {
-        this.id = id;
+    public Orders( List<Product> products, LocalDateTime orderDate) {
         this.product = products;
         this.orderDate = orderDate;
     }
@@ -52,7 +51,6 @@ public class Order {
     public String toString() {
         return "Order{" +
                 "id=" + id +
-                ", products=" + product.toString() +
                 ", orderDate=" + orderDate +
                 '}';
     }

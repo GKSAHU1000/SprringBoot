@@ -1,7 +1,7 @@
 package com.cts.assignment.assignment.cli;
 
 import com.cts.assignment.assignment.entities.Cart;
-import com.cts.assignment.assignment.entities.Order;
+import com.cts.assignment.assignment.entities.Orders;
 import com.cts.assignment.assignment.entities.Product;
 import com.cts.assignment.assignment.services.CartService;
 import com.cts.assignment.assignment.services.OrderService;
@@ -67,11 +67,11 @@ public class CliApp {
 
                 case 5:
                     //Place an order
-                    long cartId2 = 4;
+                    long cartId2 = 5;
                     Optional<Cart> cart2 = cartService.getCartById(cartId2);
                     if (cart2.isPresent()) {
-                        Order order = orderService.placeOrder(cart2.get());
-                        System.out.println(order);
+                        Orders order = orderService.placeOrder(cart2.get());
+                        System.out.println("Place an order successfully");
                     } else {
                         System.out.println("Cart Id Not Present");
                     }
@@ -80,7 +80,7 @@ public class CliApp {
 
                 case 6:
                     //View order history
-                    List<Order> orders = orderService.getAllOrders();
+                    List<Orders> orders = orderService.getAllOrders();
                     System.out.println(orders);
                     break;
 

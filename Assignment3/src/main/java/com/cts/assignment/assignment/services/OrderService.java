@@ -1,7 +1,8 @@
 package com.cts.assignment.assignment.services;
 
 import com.cts.assignment.assignment.entities.Cart;
-import com.cts.assignment.assignment.entities.Order;
+import com.cts.assignment.assignment.entities.Orders;
+import com.cts.assignment.assignment.entities.Orders;
 import com.cts.assignment.assignment.repositories.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,15 +16,13 @@ public class OrderService {
     private OrderRepository orderRepository;
 
     //Place to Order
-    public Order placeOrder(Cart cart) {
-        Order order = new Order();
-        order.setProducts(cart.getProducts());
-        order.setOrderDate(LocalDateTime.now());
+    public Orders placeOrder(Cart cart) {
+        Orders order = new Orders( cart.getProducts(),LocalDateTime.now());
         return orderRepository.save(order);
     }
 
     //getAll Orders
-    public List<Order> getAllOrders() {
+    public List<Orders> getAllOrders() {
        return orderRepository.findAll();
     }
 }
