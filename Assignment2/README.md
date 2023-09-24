@@ -1,55 +1,30 @@
 # SprringBoot
  
+ 
+ * Field-based Autowiring
+ 
 Step1. Create a Spring boot Project Via Spring Initializr "https://start.spring.io/"
 
+Step2. 
+	 Create three Java classes:
+	i. Book (A simple POJO with a &tle and author fields and their respec2ve geSers and seSers).
+	ii. Library (Should have a field of type Book).
+	iii. Applica&onRunnerImpl (An implementa2on of the Spring's Applica&onRunner interface)
+	
+	
+Step3 : Add Library class inside autowired the Book class and add displayBookDetails method and print the book 
 
-Step2. Select Project -Maven, Language - Java,  Spring Boot Version -3.1.3, add Group, Package Artifact, Name, Description select the Spring Web  dependency, and click generate 
-
-Step3. Extract this zip file and open it in Eclipse or InteliJ ide etc.
-
-
-Step4. Create a sub-package like a controller, service, repo, or model package.
-
-
-Step 5. create Student Class with id, name, and score and add getter setter, constructor, and toString method.
-
-
-Step6. craete a StudentController, StudentService, StudentRepository classes and intrfaces.
-
-
-step7. copy the classes and run the project.
-
-step8. open a postman and perform the action below
-
-* Add new Student: http://localhost:8081/api/students/add -POST
-
-    request body: {
-        "id": 2,
-        "name": "Test2",
-        "score": 4.20
-    }
-
-
-* Get All Students: http://localhost:8081/api/students/getall - GET
-
-
-* Get Student By Id: http://localhost:8081/api/students/getbyid/9 - GET
-
-
-* Update the Score: http://localhost:8081/api/students/update/1 - Patch
-
-Request Body score = 20.00
-
-
-* Delete The Student: http://localhost:8081/api/students/delete/2 - Delete
-
-* Multiple Entry : http://localhost:8081/api/students/addauto - GET
+Step4 : in main Application class by uing getBean get the Library object  and call the displayBookDetails method
 
 
 
 
-
-
-
-
+ *  Constructor-based Autowiring 
  
+ Step5 :  Create two more classes:
+	i. Student (A simple POJO with name and age fields, and their respec2ve geSers and seSers).
+	ii. Classroom (Should have a constructor that accepts an argument of type Student).
+	
+ Step6 : Add  Classroom inside  using Constructor-based autowired the Student and add displayBookDetails method and print the Student
+
+ Step7 : in main Application class by uing getBean get the Classroom object and call the displayStudentDetails method

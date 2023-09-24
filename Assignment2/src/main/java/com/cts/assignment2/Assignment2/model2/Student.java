@@ -1,12 +1,10 @@
 package com.cts.assignment2.Assignment2.model2;
 
+import org.springframework.stereotype.Component;
+
+
+@Component
 public class Student {
-
-    public Student(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
     private String name;
     private int age;
 

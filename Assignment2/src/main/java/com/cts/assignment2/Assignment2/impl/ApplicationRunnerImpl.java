@@ -25,6 +25,6 @@ public class ApplicationRunnerImpl implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
          library.displayBookDetails();
 
-          classroom.displayBookDetails();
+          classroom.displayStudentDetails();
     }
 }
