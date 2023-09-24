@@ -10,13 +10,13 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToMany
-    private List<Product> products;
+    private List<Product> product;
     public Cart(){
 
     }
-    public Cart(Long id, List<Product> products) {
+    public Cart(Long id,List<Product> products) {
         this.id = id;
-        this.products = products;
+        this.product = products;
     }
 
     public Long getId() {
@@ -28,10 +28,18 @@ public class Cart {
     }
 
     public List<Product> getProducts() {
-        return products;
+        return product;
     }
 
     public void setProducts(List<Product> products) {
-        this.products = products;
+        this.product = products;
+    }
+
+    @Override
+    public String toString() {
+        return "Cart{" +
+                "id=" + id +
+                ", products=" + product.toString() +
+                '}';
     }
 }

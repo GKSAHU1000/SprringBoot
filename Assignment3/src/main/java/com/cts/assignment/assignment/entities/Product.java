@@ -15,16 +15,16 @@ public class Product {
     private Double price;
     private Integer stock;
 
-    public Product(){
 
-    }
-
-    public Product(Long id, String name, String description, Double price, Integer stock) {
-        this.id = id;
+    public Product(String name, String description, Double price, Integer stock) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.stock = stock;
+    }
+
+    public Product() {
+
     }
 
     public Long getId() {
@@ -65,5 +65,16 @@ public class Product {
 
     public void setStock(Integer stock) {
         this.stock = stock;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", stock=" + stock +
+                '}';
     }
 }
